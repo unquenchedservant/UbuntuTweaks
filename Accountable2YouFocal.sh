@@ -11,6 +11,8 @@
 # * install all apt dependencies needed
 # -----------------------------------------------------------------
 sudo apt update
+sudo apt upgrade
+
 mkdir ~/.temp_accountable_install
 cd ~/.temp_accountable_install
 sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev wget gcc
