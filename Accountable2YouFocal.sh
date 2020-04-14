@@ -10,8 +10,10 @@
 # * create temp directory
 # * install all apt dependencies needed
 # -----------------------------------------------------------------
+sudo add-apt-repository universe #this should already be added, but just in case
 sudo apt update
 sudo apt upgrade
+
 
 mkdir ~/.temp_accountable_install
 cd ~/.temp_accountable_install
