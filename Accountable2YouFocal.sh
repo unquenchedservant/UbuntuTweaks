@@ -37,23 +37,69 @@ sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-
 # * make the install utilizing half of the CPU
 # * install with altinstall so that python3 still utilizes python 3.8
 # ------------------------------------------------------------------
-CORES=$(nproc)
-if [[ $CORES == 1 ]]; then
-    HALF=1
-else
-    HALF=$(echo "$CORES / 2" | bc)
-fi
+
 
 PYTHON="$(python3.7 -V)"
 if [[ "$PYTHON" == "Python 3.7.4" ]]; then
     echo "Python 3.7 already installed"
 else
+    # get the cores for 100%, 75%, 50% and 25%
+    CORES=$(nproc)
+    FIFT=$((CORES/2))
+    FIFT=${FIFT%.*}
+    TWFI=$((CORES/4))
+    TWFI=${TWFI%.*}
+    SEFI=$((FIFT+TWFI))
+    FINL=0
+    while :
+    do
+        echo -e "\nCPU Utilization:"
+        read -n1 -s -p "(a)100% (b)75% (c)50% (d)25% (e)custom [c] ? " INPT
+        INPT=${INPT:-c}
+        case $INPT in
+        [Aa]* )
+            FINL=$CORES
+            break
+            ;;
+        [Bb]* )
+            FINL=$SEFI
+            break
+            ;;
+        [Cc]* )
+            FINL=$FIFT
+            break
+            ;;
+        [Dd]* )
+            FINL=$TWFI
+            break
+            ;;
+        [Ee]* )
+            while :
+            do
+                echo -e "\nTotal cores - $CORES"
+                read -p "Amount to use: " CUST
+                if [ $CUST -gt $CORES ]; then
+                    echo -e "\nCan't be higher than total cores"
+                elif [ $CUST -lt 0 ]; then
+                     echo -e "\nCan't be lower than 0"
+                else
+                    FINL=$CUST
+                    break
+                fi
+            done
+            echo -e "\nUsing $FINL cores"
+            break
+            ;;
+          * ) echo -e "\nPlease Select an option" ;;
+        esac
+    done
+
     wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
     tar -xf Python-3.7.4.tgz
     cd Python-3.7.4
 
     ./configure --enable-optimizations
-    make -j $HALF
+    make -j $FINL
     sudo make altinstall
 
     # Go back to temp folder root, just in case 
