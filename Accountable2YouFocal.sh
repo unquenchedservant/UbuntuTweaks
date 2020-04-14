@@ -5,6 +5,13 @@
 # Tested on a fresh install of Ubuntu 20.04 Beta
 
 # -----------------------------------------------------------------
+# INSTALLATION INSTRUCTIONS
+# $ wget https://github.com/chillhumanoid/UbuntuTweaks/blob/master/Accountable2YouFocal.sh
+# $ chmod +x Accountable2YouFocal.sh
+# $ sudo ./Accountable2YouFocal.sh
+# -----------------------------------------------------------------
+
+# -----------------------------------------------------------------
 # Initilazation
 # * update ubuntu files
 # * create temp directory
