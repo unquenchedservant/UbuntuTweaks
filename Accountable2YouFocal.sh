@@ -13,8 +13,7 @@
 sudo apt update
 mkdir ~/.temp_accountable_install
 cd ~/.temp_accountable_install
-
-sudo apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libn>
+sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev wget gcc
 
 
 # ------------------------------------------------------------------
