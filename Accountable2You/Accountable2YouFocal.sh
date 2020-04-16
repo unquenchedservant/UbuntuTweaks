@@ -6,7 +6,7 @@
 
 # -----------------------------------------------------------------
 # INSTALLATION INSTRUCTIONS
-# $ wget https://github.com/chillhumanoid/UbuntuTweaks/blob/master/Accountable2YouFocal.sh
+# $ wget https://raw.githubusercontent.com/chillhumanoid/UbuntuTweaks/master/Accountable2You/Accountable2YouFocal.sh
 # $ chmod +x Accountable2YouFocal.sh
 # $ sudo ./Accountable2YouFocal.sh
 # -----------------------------------------------------------------
