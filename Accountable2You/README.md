@@ -6,7 +6,7 @@ This allows accountable2you to work on Ubuntu 20.04. Ubuntu 20.04 uses python3.8
 
 ### Installation Instructions
 ```
-$ wget https://github.com/chillhumanoid/UbuntuTweaks/blob/master/Accountable2You/Accountable2YouFocal.sh
+$ wget https://raw.githubusercontent.com/chillhumanoid/UbuntuTweaks/master/Accountable2You/Accountable2YouFocal.sh
 $ chmod +x Accountable2YouFocal.sh
 $ sudo ./Accountable2YouFocal.sh
 ```
@@ -20,8 +20,8 @@ Unfortunately, there is still a little bit of added work to make it work.
 First, download both a2yback.sh and OnLogin.sh
 
 ```
-$ wget https://github.com/chillhumanoid/UbuntuTweaks/blob/master/Accountable2You/a2yback.sh
-$ wget https://github.com/chillhumanoid/UbuntuTweaks/blob/master/Accountable2You/OnLogin.sh
+$ wget https://raw.githubusercontent.com/chillhumanoid/UbuntuTweaks/master/Accountable2You/a2yback.sh
+$ wget https://raw.githubusercontent.com/chillhumanoid/UbuntuTweaks/master/Accountable2You/OnLogin.sh
 $ chmod +x a2yback.sh
 $ chmod +x OnLogin.sh
 ```
